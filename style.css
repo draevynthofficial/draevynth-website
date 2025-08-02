@@ -1,99 +1,38 @@
-body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #0d0d0d;
-    color: #f5f5f5;
-    text-align: center;
-}
+/* style.css */ body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0d0d0d; color: #f5f5f5; text-align: center; scroll-behavior: smooth; }
 
-header {
-    padding: 40px 20px;
-    background: linear-gradient(135deg, #111111, #1a1a1a);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-}
+header { padding: 40px 20px; background: linear-gradient(135deg, #111111, #1a1a1a); box-shadow: 0 4px 10px rgba(0,0,0,0.5); animation: fadeInDown 1s ease forwards; }
 
-header h1 {
-    font-size: 3em;
-    margin: 0;
-    color: #00ffe7;
-    letter-spacing: 2px;
-}
+header h1 { font-size: 3em; margin: 0; color: #00ffe7; letter-spacing: 2px; }
 
-header p {
-    margin-top: 10px;
-    font-size: 1.1em;
-    color: #aaaaaa;
-}
+header p { margin-top: 10px; font-size: 1.1em; color: #aaaaaa; }
 
-.buttons {
-    margin: 50px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-}
+.buttons { margin: 50px 20px; display: flex; flex-direction: column; gap: 20px; align-items: center; }
 
-.btn {
-    display: inline-block;
-    padding: 15px 30px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s, transform 0.3s;
-    width: 200px;
-    text-align: center;
-}
+.btn { display: inline-block; padding: 15px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; transition: background 0.3s, transform 0.3s; width: 200px; text-align: center; opacity: 0; transform: translateY(20px); animation: fadeInUp 0.8s ease forwards; }
 
-.whatsapp { background: #25D366; color: #fff; }
-.instagram { background: #E1306C; color: #fff; }
-.tiktok { background: #010101; color: #fff; border: 2px solid #ff0050; }
-.youtube { background: #FF0000; color: #fff; }
+.btn:nth-child(1) { animation-delay: 0.3s; } .btn:nth-child(2) { animation-delay: 0.5s; } .btn:nth-child(3) { animation-delay: 0.7s; } .btn:nth-child(4) { animation-delay: 0.9s; }
 
-.btn:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
-}
+.whatsapp { background: #25D366; color: #fff; } .instagram { background: #E1306C; color: #fff; } .tiktok { background: #010101; color: #fff; border: 2px solid #ff0050; } .youtube { background: #FF0000; color: #fff; }
 
-.products {
-    padding: 40px 20px;
-}
+.btn:hover { transform: scale(1.05); opacity: 0.9; }
 
-.products h2 {
-    font-size: 2em;
-    margin-bottom: 30px;
-    color: #00ffe7;
-}
+.products { padding: 40px 20px; }
 
-.product-item {
-    background: #1a1a1a;
-    padding: 20px;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-    text-align: center;
-}
+.products h2 { font-size: 2em; margin-bottom: 30px; color: #00ffe7; }
 
-.product-item img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-}
+.product-item { background: #1a1a1a; padding: 20px; margin-bottom: 30px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.5); text-align: center; opacity: 0; transform: translateY(30px); animation: fadeInUp 1s ease forwards; }
 
-.product-item h3 {
-    margin: 15px 0 10px;
-}
+.product-item:nth-child(2) { animation-delay: 0.3s; } .product-item:nth-child(3) { animation-delay: 0.6s; }
 
-.product-item p {
-    margin: 0 0 15px;
-    font-weight: bold;
-    color: #00ffe7;
-}
+.product-item img { width: 150px; height: 150px; object-fit: cover; border-radius: 10px; }
 
-footer {
-    margin-top: 60px;
-    padding: 20px;
-    background: #111;
-    color: #555;
-    font-size: 0.9em;
-}
+.product-item h3 { margin: 15px 0 10px; }
+
+.product-item p { margin: 0 0 15px; font-weight: bold; color: #00ffe7; }
+
+footer { margin-top: 60px; padding: 20px; background: #111; color: #555; font-size: 0.9em; animation: fadeInUp 1s ease forwards; animation-delay: 1.2s; }
+
+@keyframes fadeInUp { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
+
+@keyframes fadeInDown { 0% { opacity: 0; transform: translateY(-20px); } 100% { opacity: 1; transform: translateY(0); } }
+
