@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Form - DRAEVYNTH</title>
+  <style>
+    body { background-color: #0d0d0d; color: #fff; font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    .container { max-width: 500px; margin: 50px auto; background: #1a1a1a; padding: 30px; border-radius: 12px; box-shadow: 0 0 10px rgba(0,191,255,0.2); }
+    h1 { text-align: center; color: #00bfff; }
+    label { display: block; margin-top: 15px; font-weight: bold; }
+    input, select, textarea {
+      width: 100%; padding: 10px; margin-top: 5px; border-radius: 8px; border: none; background: #333; color: #fff;
+    }
+    button {
+      background: #00bfff; color: #fff; padding: 12px; width: 100%; border: none; border-radius: 8px; margin-top: 20px; font-size: 1rem; cursor: pointer;
+    }
+    button:hover { background: #0099cc; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Order on WhatsApp</h1>
+    <form id="orderForm">
+      <label for="product">Product</label>
+      <select id="product" name="product">
+        <option value="Custom Branded Shirt">Custom Branded Shirt</option>
+        <option value="Exclusive Cap">Exclusive Cap</option>
+        <option value="Custom Mug">Custom Mug</option>
+      </select><label for="quantity">Quantity</label>
+  <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+
+  <label for="name">Full Name</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="phone">Phone Number</label>
+  <input type="tel" id="phone" name="phone" required>
+
+  <label for="address">Delivery Address</label>
+  <textarea id="address" name="address" rows="3" required></textarea>
+
+  <button type="submit">Order on WhatsApp</button>
+</form>
+
+  </div>  <script>
+    document.getElementById('orderForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var product = document.getElementById('product').value;
+      var quantity = document.getElementById('quantity').value;
+      var name = document.getElementById('name').value;
+      var phone = document.getElementById('phone').value;
+      var address = document.getElementById('address').value;
+      var message = `Hello, I want to order:\nProduct: ${product}\nQuantity: ${quantity}\nName: ${name}\nPhone: ${phone}\nAddress: ${address}`;
+      var whatsappLink = `https://wa.me/2347011729564?text=${encodeURIComponent(message)}`;
+      window.open(whatsappLink, '_blank');
+    });
+  </script></body>
+</html>
