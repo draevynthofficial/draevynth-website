@@ -46,8 +46,8 @@
   <script>
     function payWithPaystack(product, amount) {
       var handler = PaystackPop.setup({
-        key: 'pk_test_xxxxxxxxxxxxxxxxxxxxxxxx', // Replace with your Paystack Public Key
-        email: 'customer@example.com',
+        key: 'pk_test_d4cd43a90f0a19fd65f5c9c63815e6d68f9c95e8', // Replace with your Paystack Public Key
+        email: 'draevynth@gmail.com',
         amount: amount * 100,
         currency: 'NGN',
         metadata: { custom_fields: [{ display_name: product, variable_name: 'product_name', value: product }] },
