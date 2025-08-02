@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DRAEVYNTH ENTERPRISES</title>
+  <style>
+    body { background-color: #0d0d0d; color: #fff; font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header { background-color: #1a1a1a; padding: 20px; text-align: center; }
+    header h1 { margin: 0; font-size: 2rem; }
+    header p { margin: 5px 0 0; color: #00bfff; }
+    .product { background: #1a1a1a; margin: 20px; padding: 20px; border-radius: 10px; text-align: center; }
+    .product h2 { margin-top: 0; }
+    .pay-btn { background: #00bfff; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 1rem; }
+    .pay-btn:hover { background: #0099cc; }
+  </style>
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+</head>
+<body>
+  <header>
+    <h1>DRAEVYNTH ENTERPRISES</h1>
+    <p>Master Your Hustle. Rule Your Empire.</p>
+  </header>
+
+  <div class="product">
+    <h2>Empire Boss Hoodie</h2>
+    <p>Premium black hoodie designed for entrepreneurs who move in silence but dominate loudly.</p>
+    <p><strong>Price:</strong> ₦15,000</p>
+    <button class="pay-btn" onclick="payWithPaystack('Empire Boss Hoodie', 15000)">Buy Now</button>
+  </div>
+
+  <div class="product">
+    <h2>Online Hustler's Toolkit</h2>
+    <p>A digital package of resources, templates, and guides to start making money online.</p>
+    <p><strong>Price:</strong> ₦10,000</p>
+    <button class="pay-btn" onclick="payWithPaystack('Online Hustler\\'s Toolkit', 10000)">Buy Now</button>
+  </div>
+
+  <div class="product">
+    <h2>Motivational Wall Art (Digital)</h2>
+    <p>High-resolution digital posters to keep your mindset sharp and focused.</p>
+    <p><strong>Price:</strong> ₦5,000</p>
+    <button class="pay-btn" onclick="payWithPaystack('Motivational Wall Art', 5000)">Buy Now</button>
+  </div>
+
+  <script>
+    function payWithPaystack(product, amount) {
+      var handler = PaystackPop.setup({
+        key: 'pk_test_xxxxxxxxxxxxxxxxxxxxxxxx', // Replace with your Paystack Public Key
+        email: 'customer@example.com',
+        amount: amount * 100,
+        currency: 'NGN',
+        metadata: { custom_fields: [{ display_name: product, variable_name: 'product_name', value: product }] },
+        callback: function(response) { alert('Payment successful. Transaction ref is ' + response.reference); },
+        onClose: function() { alert('Transaction was not completed, window closed.'); }
+      });
+      handler.openIframe();
+    }
+  </script>
+
+</body>
+</html>
