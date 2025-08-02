@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en"><!DOCTYPE html><html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,23 +11,14 @@
       text-align: center;
     }
     header h1 { margin: 0; font-size: 2.5rem; color: #00bfff; }
-    header p { margin-top: 10px; font-size: 1.2rem; color: #cccccc; }.about {
-  max-width: 800px;
-  margin: 40px auto;
-  background: #1a1a1a;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,191,255,0.2);
-}
-.about h2 { color: #00bfff; margin-top: 0; }
+    header p { margin-top: 10px; font-size: 1.2rem; color: #cccccc; }.section { max-width: 1200px; margin: 20px auto; padding: 20px; }
+.section h2 { color: #00bfff; }
 
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  padding: 20px 0;
 }
 .product {
   background: #1a1a1a;
@@ -42,20 +32,33 @@
   transform: translateY(-5px);
   box-shadow: 0 0 15px rgba(0,191,255,0.3);
 }
-.product h2 { margin-top: 0; }
-.pay-btn {
+.product h3 { margin-top: 0; }
+.buy-btn {
+  display: inline-block;
   background: #00bfff;
   color: #fff;
   padding: 10px 20px;
-  border: none;
   border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
+  text-decoration: none;
+  margin-top: 10px;
   transition: background 0.3s ease;
 }
-.pay-btn:hover {
-  background: #0099cc;
+.buy-btn:hover { background: #0099cc; }
+
+.order-btn {
+  display: block;
+  width: max-content;
+  margin: 30px auto;
+  padding: 15px 30px;
+  background: #00bfff;
+  color: #fff;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.3s ease;
 }
+.order-btn:hover { background: #0099cc; }
+
 footer {
   text-align: center;
   padding: 20px;
@@ -64,152 +67,47 @@ footer {
 }
 
   </style>
-  <script src="https://js.paystack.co/v1/inline.js"></script>
 </head>
 <body>
   <header>
-    <h1>DRAEVYNTH ENTERPRISES</h1>
-    <p>Master Your Hustle. Rule Your Empire.</p>
-  </header>  <div class="about">
-    <h2>About DRAEVYNTH</h2>
-    <p>DRAEVYNTH ENTERPRISES is a premium lifestyle and business brand that empowers ambitious individuals to build their own empires through unique, high-quality products and actionable business resources.</p>
-    <p>We specialize in selling exclusive fashion pieces, digital business toolkits, and motivational resources designed for entrepreneurs, hustlers, and visionaries who are determined to succeed in the modern business world.</p>
-    <p>At DRAEVYNTH, we believe that success is not just a goal, it’s a lifestyle. Every product we offer—whether it’s a statement hoodie or a business mentorship guide—is crafted to inspire, equip, and elevate you on your journey to financial independence and personal excellence.</p>
-    <p>We don't just sell products, we provide the mindset, tools, and image of a true empire builder. Join us and take your hustle to the next level with authentic resources and a brand identity that resonates with power, focus, and ambition.</p>
-  </div>  <div class="product-grid">
-    <div class="product">
-      <h2>Empire Boss Hoodie</h2>
-      <p>Premium black hoodie designed for entrepreneurs who move in silence but dominate loudly.</p>
-      <p><strong>Price:</strong> ₦15,000</p>
-      <button class="pay-btn" onclick="payWithPaystack('Empire Boss Hoodie', 15000)">Buy Now</button>
-    </div><div class="product">
-  <h2>Online Hustler's Toolkit</h2>
-  <p>A digital package of resources, templates, and guides to start making money online.</p>
-  <p><strong>Price:</strong> ₦10,000</p>
-  <button class="pay-btn" onclick="payWithPaystack('Online Hustler\'s Toolkit', 10000)">Buy Now</button>
-</div>
-
-<div class="product">
-  <h2>Motivational Wall Art (Digital)</h2>
-  <p>High-resolution digital posters to keep your mindset sharp and focused.</p>
-  <p><strong>Price:</strong> ₦5,000</p>
-  <button class="pay-btn" onclick="payWithPaystack('Motivational Wall Art', 5000)">Buy Now</button>
-</div>
-
-  </div>  <footer>
-    &copy; 2025 DRAEVYNTH ENTERPRISES. All rights reserved.
-  </footer>  <script>
-    function payWithPaystack(product, amount) {
-      var handler = PaystackPop.setup({
-        key: 'pk_test_xxxxxxxxxxxxxxxxxxxxxxxx', // Replace with your Paystack Public Key
-        email: 'customer@example.com',
-        amount: amount * 100,
-        currency: 'NGN',
-        metadata: { custom_fields: [{ display_name: product, variable_name: 'product_name', value: product }] },
-        callback: function(response) { alert('Payment successful. Transaction ref is ' + response.reference); },
-        onClose: function() { alert('Transaction was not completed, window closed.'); }
-      });
-      handler.openIframe();
-    }
-  </script></body>
-</html>
-<head>
-    <meta charset="UTF-8">
-    <title>DRAEVYNTH Official Website</title>
-    
-</head>
-<body><div class="social-icons">
-  <a href="https://instagram.com/draevynth_official" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" width="30">
-  </a>
-  <a href="https://tiktok.com/@draevynth" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/3046/3046120.png" alt="TikTok" width="30">
-  </a>
-  <a href="https://youtube.com/@DraevynthChannel" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" width="30">
-  </a>
-  <a href="https://wa.me/2347011729564" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="30">
-  </a>
-</div>
-    <header>
-        <h1>DRAEVYNTH</h1>
-        <p>Your Creative Business Partner</p>
-    </header>
-
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We help you with music production, content creation, and business strategies.</p>
-    </section>
-
-    <section id="services">
-        <h2>Our Services</h2>
-        <p>🎵 Music Production</p>
-        <p>📱 Content Strategy</p>
-        <p>📈 Business Consulting</p>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: draevynth@gmail.com</p>
-        <p>Phone: +2347011729564</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 DRAEVYNTH. All Rights Reserved.</p>
-    </footer>
-</body><div class="hero">
     <h1>Welcome to DRAEVYNTH</h1>
     <p>We Turn Ideas into Reality</p>
-    <a href="https://wa.me/2347011729564" class="btn" target="_blank">Chat with Us on WhatsApp</a> 
+  </header>  <div class="section">
+    <h2>Chat with Us on WhatsApp</h2>
+    <p><a href="https://wa.me/2347011729564" class="buy-btn">WhatsApp Chat</a></p>
+  </div>  <div class="section">
+    <h2>About</h2>
+    <p>DRAEVYNTH ENTERPRISES is a premium lifestyle and business brand that empowers ambitious individuals to build their own empires through unique, high-quality products and actionable business resources.</p>
+  </div>  <div class="section">
+    <h2>Services</h2>
+    <p>We offer customized branding products, digital business resources, and mentorship on building profitable businesses.</p>
+  </div>  <div class="section">
+    <h2>Contact</h2>
+    <p>Phone: +2347011729564</p>
+  </div>  <div class="section">
+    <h2>Our Products</h2>
+    <div class="product-grid">
+      <div class="product">
+        <h3>Custom Branded Shirt</h3>
+        <p>₦12,000</p>
+        <a href="https://wa.me/2347011729564?text=I%20want%20to%20buy%20Custom%20Branded%20Shirt" class="buy-btn">Buy on WhatsApp</a>
+      </div><div class="product">
+    <h3>Exclusive Cap</h3>
+    <p>₦5,000</p>
+    <a href="https://wa.me/2347011729564?text=I%20want%20to%20buy%20Exclusive%20Cap" class="buy-btn">Buy on WhatsApp</a>
+  </div>
+
+  <div class="product">
+    <h3>Custom Mug</h3>
+    <p>₦3,500</p>
+    <a href="https://wa.me/2347011729564?text=I%20want%20to%20buy%20Custom%20Mug" class="buy-btn">Buy on WhatsApp</a>
+  </div>
 </div>
-</html><nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-</nav><section class="products">
-    <h2>Our Products</h2>
 
-    <div class="product-item">
-        <img src="https://via.placeholder.com/200" alt="Product 1">
-        <h3>Custom Branded Shirt</h3>
-        <p>₦12,000</p>
-        <a href="https://wa.me/2347011729564?text=I'm%20interested%20in%20buying%20the%20Custom%20Branded%20Shirt" class="btn whatsapp">Buy on WhatsApp</a>
-    </div>
+  </div><a href="order.html" class="order-btn">Place Custom Order</a>
 
-    <div class="product-item">
-        <img src="https://via.placeholder.com/200" alt="Product 2">
-        <h3>Exclusive Cap</h3>
-        <p>₦5,000</p>
-        <a href="https://wa.me/2347011729564?text=I'm%20interested%20in%20buying%20the%20Exclusive%20Cap" class="btn whatsapp">Buy on WhatsApp</a>
-    </div>
-
-    <div class="product-item">
-        <img src="https://via.placeholder.com/200" alt="Product 3">
-        <h3>Custom Mug</h3>
-        <p>₦3,500</p>
-        <a href="https://wa.me/2347011729564?text=I'm%20interested%20in%20buying%20the%20Custom%20Mug" class="btn whatsapp">Buy on WhatsApp</a>
-    </div>
-</section>
-<section class="products">
-    <h2>Our Products</h2>
-
-    <div class="product-item">
-        <img src="https://via.placeholder.com/200" alt="Product 1">
-        <h3>Custom Branded Shirt</h3>
-        <p>₦12,000</p>
-        <a href="https://wa.me/2347011729564?text=I'm%20interested%20in%20buying%20the%20Custom%20Branded%20Shirt" class="btn whatsapp">Buy on WhatsApp</a>
-    </div>
-
-    <div class="product-item">
-        <img src="https://via.placeholder.com/200" alt="Product 2">
-        <h3>Exclusive Cap</h3>
-        <p>₦5,000</p>
-        <a href="https://wa.me/2347011729564?text=I'm%20interested%20in%20buying%20the%20Exclusive%20Cap" class="btn whatsapp">Buy on WhatsApp</a>
-    </div>
-
-    <div class="product-item">
-        <img src="https://via.placeholder.com/200" alt="Product 3">
-        <h3>Custom Mug</h3>
-        <p>₦3,500</p>
-        <a href="https://wa.me/2347011729564?text=I'm%20interested%20in%20buying%20the%20Custom%20Mug" class="btn whatsapp">Buy 
+  <footer>
+    &copy; 2025 DRAEVYNTH. All Rights Reserved.
+  </footer>
+</body>
+</html>
